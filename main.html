@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Typing</title>
+<style>
+  body {
+    text-align:center;
+    font-family:sans-serif;
+    background:#ffffff;
+    margin:0;
+    padding:0;
+  }
+  /* ▼ ひらがな＋ローマ字カード */
+  .card-hira {
+    width:700px;       /* 横幅は元に戻す */
+    height:110px;      /* 高さを少し狭く */
+    margin:20px auto 20px auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.15);
+  }
+  #questionHira {
+    font-size:40px;
+    margin:0;
+    font-weight:bold;
+  }
+  #questionRoma {
+    font-size:40px;
+    margin-top:2px; /* 上下の距離を少し近く */
+  }
+  /* ▼ キーボードカード */
+  #keyboardBox {
+    width:700px;
+    margin:0 auto;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.15);
+    padding:15px 0;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card-hira">
+  <div id="questionHira"></div>
+  <div id="questionRoma"></div>
+</div>
+
+<div id="keyboardBox">
+  <iframe id="kb" src="keyboard1126v1000a.html"
+          style="width:700px; height:200px; border:none;"></iframe>
+</div>
+
+<script src="typing1127.js?v=2"></script>
+
+</body>
+</html>

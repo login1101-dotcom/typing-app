@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    margin:0; padding:0;
+    background:#fff;
+    text-align:center;
+    font-family:sans-serif;
+  }
+  #kbwrap {
+    display:inline-block;
+    text-align:left;
+  }
+  .row {
+    display:flex;
+    gap:6px;
+    margin:6px 0;
+    justify-content:flex-start;
+  }
+  .key {
+    width:30px; height:30px;
+    background:#fafafa;
+    border:1px solid #cfcfcf;
+    border-radius:4px;
+    font-size:14px;
+    line-height:30px;
+    text-align:center;
+    user-select:none;
+    transition:background 0.05s;
+  }
+  .key.active { background:yellow; }
+  .key[data-key="a"],
+  .key[data-key="s"],
+  .key[data-key="d"],
+  .key[data-key="k"],
+  .key[data-key="l"],
+  .key[data-key=";"] { border: 2px solid #ffb6c1; }
+  .key[data-key="f"],
+  .key[data-key="j"] { border: 2px solid red; }
+  .space { width:130px; }
+</style>
+</head>
+
+<body>
+
+<div id="kbwrap">
+<div class="row">
+  <div class="key" data-key="1" style="width:50px;">1</div><div class="key" data-key="2">2</div><div class="key" data-key="3">3</div><div class="key" data-key="4">4</div>
+  <div class="key" data-key="5">5</div><div class="key" data-key="6">6</div><div class="key" data-key="7">7</div><div class="key" data-key="8">8</div>
+  <div class="key" data-key="9">9</div><div class="key" data-key="0">0</div><div class="key" data-key="-">-</div><div class="key" data-key="^">^</div>
+  <div class="key" data-key="¥">¥</div><div class="key" data-key="Backspace">x</div>
+</div>
+
+<div class="row">
+  <div class="key" data-key="Tab" style="width:35px;">tab</div><div class="key" data-key="q">Q</div><div class="key" data-key="w">W</div><div class="key" data-key="e">E</div>
+  <div class="key" data-key="r">R</div><div class="key" data-key="t">T</div><div class="key" data-key="y">Y</div><div class="key" data-key="u">U</div>
+  <div class="key" data-key="i">I</div><div class="key" data-key="o">O</div><div class="key" data-key="p">P</div><div class="key" data-key="@">@</div>
+  <div class="key" data-key="[">[</div><div class="key" data-key="Enter" style="width:45px;">Enter</div>
+</div>
+
+<div class="row">
+  <div class="key" data-key="Control" style="width:45px; font-size:12px;">Control</div><div class="key" data-key="a">A</div><div class="key" data-key="s">S</div><div class="key" data-key="d">D</div>
+  <div class="key" data-key="f">F</div><div class="key" data-key="g">G</div><div class="key" data-key="h">H</div><div class="key" data-key="j">J</div>
+  <div class="key" data-key="k">K</div><div class="key" data-key="l">L</div><div class="key" data-key=";">;</div><div class="key" data-key=":">:</div>
+  <div class="key" data-key="]">]</div><div class="key" data-key="Enter2" style="width:35px;">⤶</div>
+</div>
+
+<div class="row">
+  <div class="key" data-key="Shift" style="width:59px;">ShiftL</div><div class="key" data-key="z">Z</div><div class="key" data-key="x">X</div><div class="key" data-key="c">C</div>
+  <div class="key" data-key="v">V</div><div class="key" data-key="b">B</div><div class="key" data-key="n">N</div><div class="key" data-key="m">M</div>
+  <div class="key" data-key=",">,</div><div class="key" data-key=".">.</div><div class="key" data-key="/">/</div><div class="key" data-key="_">_</div>
+  <div class="key" data-key="Shift2" style="width:59px;">ShiftR</div>
+</div>
+
+<div class="row">
+  <div class="key" data-key="CapsLock" style="pointer-events:none;" style="width:30px; pointer-events:none;" style="pointer-events:none; width:45px;">cap</div>
+  <div class="key" data-key="Alt">opt</div><div class="key" data-key="Meta" style="width:40px;">cmd</div><div class="key" data-key="Eisu" style="width:40px;">英数</div>
+  <div class="key space" data-key=" ">Space</div>
+  <div class="key" data-key="Kana" style="width:40px;">かな</div><div class="key" data-key="Meta2" style="width:40px;">cmd</div><div class="key" data-key="Fn">fn</div>
+</div>
+</div>
+
+<script>
+window.addEventListener("message", e => {
+  const el = document.querySelector(`.key[data-key="${e.data.key}"]`);
+  if(!el) return;
+  if(e.data.down) el.classList.add("active");
+  else el.classList.remove("active");
+});
+</script>
+
+</body>
+</html>
