@@ -1,0 +1,6 @@
+#keyboardArea {
+  position: absolute;
+  top: 50px;           /* 上位置はそのまま */
+  left: 50%;           /* ページ幅の中央 */
+  transform: translateX(-50%);  /* 自身幅の半分だけ左にずらして完全中央 */
+}
