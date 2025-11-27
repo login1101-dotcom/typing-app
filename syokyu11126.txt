@@ -1,5 +1,0 @@
-あめ,ame
-ひる,hiru
-そら,sora
-かさ,kasa
-ねずみ,nezumi
